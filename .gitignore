@@ -2,5 +2,6 @@ node_modules/
 dist/
 .npm-cache/
 .pnpm-home/
+.pnpm-store/
 .tmp/
 *.log
