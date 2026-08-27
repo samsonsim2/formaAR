@@ -130,7 +130,7 @@ function App(){
  useEffect(()=>()=>{video.current?.srcObject?.getTracks().forEach(t=>t.stop())},[]);
  useEffect(()=>{if(placed&&tracking.quad.length!==4)setPlaced(false)},[placed,tracking.quad.length]);
  return <div style={{width:'100vw',height:'100dvh',display:'grid',placeItems:'center',background:'#0d0c0a'}}><main style={{width:'min(100vw,calc(100dvh * 9 / 16))',height:'min(100dvh,calc(100vw * 16 / 9))',aspectRatio:'9 / 16',margin:0,boxShadow:'0 0 70px #000'}}>
-   <video ref={video} muted playsInline style={{transform:'scaleX(-1)'}}/>
+   <video ref={video} className="camera-feed" muted playsInline/>
    <div className="wash"/>
    <header><button className="round">×</button><div className="brand"><span>FORMA</span><b>SPACE SCAN</b></div><button className="round">•••</button></header>
    {!started ? <section className="permission"><div className="cube">◇</div><p className="eyebrow">OPENCV DIAGNOSTIC</p><h1>Find a<br/><em>flat face.</em></h1><p>Aim at a box, book, tabletop, wall, or any visible planar surface.</p><button className="primary" onClick={start}>Start camera <span>→</span></button><small>All processing stays in this browser.</small></section> : <>
